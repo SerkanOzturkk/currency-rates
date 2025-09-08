@@ -1,0 +1,263 @@
+.currency-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 50px auto;
+    width: 600px;
+    min-height: 280px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.currency-div::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    pointer-events: none;
+}
+
+.currency-div > div:first-child {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    background: linear-gradient(90deg, #1a1a2e, #16213e) !important;
+    color: #fff !important;
+    width: 100% !important;
+    text-align: center !important;
+    padding: 20px 0;
+    margin: 0;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.currency-div > div:first-child h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.currency-div > div:nth-child(2) {
+    margin-top: 35px !important;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.amount,
+.result {
+    width: 100px;
+    height: 45px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    padding: 0 15px;
+    font-size: 16px;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.amount:focus,
+.result:focus {
+    outline: none;
+    border-color: #fff;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.result {
+    background: rgba(255, 255, 255, 0.8);
+    cursor: not-allowed;
+}
+
+.from-currency-option,
+.to-currency-option {
+    width: 85px;
+    height: 45px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    padding: 0 10px;
+    font-size: 14px;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.from-currency-option:focus,
+.to-currency-option:focus {
+    outline: none;
+    border-color: #fff;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.from-currency-option:hover,
+.to-currency-option:hover {
+    border-color: rgba(255, 255, 255, 0.6);
+    transform: translateY(-1px);
+}
+
+.right-arrow {
+    font-size: 28px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    top: 0;
+    margin: 0;
+}
+
+.right-arrow:hover {
+    transform: rotate(180deg) scale(1.1);
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.right-arrow:active {
+    transform: rotate(180deg) scale(0.95);
+}
+
+.exchange-button {
+    width: 120px;
+    height: 45px;
+    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    margin-top: 45px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(238, 90, 36, 0.4);
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+}
+
+.exchange-button:hover {
+    background: linear-gradient(135deg, #ee5a24, #ff6b6b);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(238, 90, 36, 0.6);
+}
+
+.exchange-button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(238, 90, 36, 0.4);
+}
+
+.exchange-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s;
+}
+
+.exchange-button:hover::before {
+    left: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .currency-div {
+        width: 90%;
+        margin: 20px auto;
+        min-height: 320px;
+    }
+    
+    .currency-div > div:nth-child(2) {
+        flex-direction: column;
+        gap: 20px;
+        align-items: stretch;
+        padding: 0 30px;
+    }
+    
+    .amount,
+    .result,
+    .from-currency-option,
+    .to-currency-option {
+        width: 80%;
+        max-width: 200px;
+        margin: 0 auto;
+    }
+    
+    .right-arrow {
+        align-self: center;
+        margin: 10px 0;
+    }
+
+    .exchange-button{
+        margin-bottom: 15px;
+    }
+}
+
+.currency-div {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.currency-div {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+input:focus,
+select:focus,
+button:focus {
+    outline: none;
+}
+
+.amount::placeholder {
+    color: rgba(51, 51, 51, 0.5);
+}
+
+.language-selector{
+
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+
+}
