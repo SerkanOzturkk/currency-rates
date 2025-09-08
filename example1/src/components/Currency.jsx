@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import '../css/Currency.css';
+import '../css/currency.css';
 import { FaExchangeAlt } from "react-icons/fa";
 import axios from 'axios'
 import currencyList from '../currency_list.json';
